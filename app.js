@@ -8,27 +8,25 @@ function agregarAmigo() {
         let nombre = document.getElementById('amigo').value;
         if (nombre !== '') {
             listaDeAmigos.push(nombre);
-            document.getElementById('amigo').value = '';
             maximoAmigos++;
             console.log(listaDeAmigos);
+            document.getElementById('amigo').value = '';
+            let lista = document.getElementById('listaDeAmigos');
+            let item = document.createElement('li');
+            item.textContent = nombre;
+            lista.appendChild(item);
         } else {
             alert('Por favor, ingresa un nombre válido.'); 
             return;
         }
     } else {
         alert('Se ha alcanzado el número máximo de entradas.');
+        document.getElementById('amigo').value = '';
     }           
 }
-
 
 function sortearAmigo() {
     let ganador = listaDeAmigos[Math.floor(Math.random() * listaDeAmigos.length)];
     alert(ganador);
     return;
-}
-
-function mostrarNombres(listaDeAmigo){
-
-
-    return
 }
