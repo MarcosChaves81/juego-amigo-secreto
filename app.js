@@ -2,7 +2,7 @@
 
 let listaDeAmigos = []
 
-let maximoAmigos = 6
+let maximoAmigos = 0
 function agregarAmigos(listaDeAmigo) {
     if (maximoAmigos <=6){
         {
@@ -16,6 +16,8 @@ function agregarAmigos(listaDeAmigo) {
         return
             }
         }
+    }else{
+        alert('Se ha alcanzado el número máximo de entradas.')
     }           
 }
 
