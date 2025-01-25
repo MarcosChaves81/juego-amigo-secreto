@@ -1,7 +1,17 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
-
 let listaDeAmigos = [];
 let maximoAmigos = 0;
+
+function actualizarListaAmigos() {
+    let lista = document.getElementById('listaDeAmigos');
+    lista.innerHTML = "";
+
+    for (let i = 0; i < listaDeAmigos.length; i++) {
+        let item = document.createElement('li');
+        item.textContent = listaDeAmigos[i];
+        lista.appendChild(item);
+    }
+}
 
 function agregarAmigo() {
     if (maximoAmigos < 5) {
@@ -11,10 +21,7 @@ function agregarAmigo() {
             maximoAmigos++;
             console.log(listaDeAmigos);
             document.getElementById('amigo').value = '';
-            let lista = document.getElementById('listaDeAmigos');
-            let item = document.createElement('li');
-            item.textContent = nombre;
-            lista.appendChild(item);
+            actualizarListaAmigos();
         } else {
             alert('Por favor, ingresa un nombre válido.'); 
             return;
@@ -27,15 +34,10 @@ function agregarAmigo() {
 
 function sortearAmigo() {
     let ganador = listaDeAmigos[Math.floor(Math.random() * listaDeAmigos.length)];
-   
     let lista = document.getElementById('listaDeAmigos');
     lista.innerHTML = '';
-    
-    
     let item = document.createElement('li');
-    item.textContent = "El ganador es " + ganador;
+    item.textContent = "El amigo secreto sorteado es: " + ganador;
+    item.classList.add('ganador');
     lista.appendChild(item);
-    
-    return
 }
-
