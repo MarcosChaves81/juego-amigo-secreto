@@ -27,6 +27,15 @@ function agregarAmigo() {
 
 function sortearAmigo() {
     let ganador = listaDeAmigos[Math.floor(Math.random() * listaDeAmigos.length)];
-    alert(ganador);
-    return;
+   
+    let lista = document.getElementById('listaDeAmigos');
+    lista.innerHTML = '';
+    
+    
+    let item = document.createElement('li');
+    item.textContent = "El ganador es " + ganador;
+    lista.appendChild(item);
+    
+    return
 }
+
