@@ -3,7 +3,7 @@
 let listaDeAmigos = []
 
 let maximoAmigos = 6
-function guardarNombres(listaDeAmigo) {
+function agregarAmigos(listaDeAmigo) {
     if (maximoAmigos <=6){
         {
             let nombre = document.getElementById('amigo').value;
